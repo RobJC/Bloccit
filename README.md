@@ -6,4 +6,4 @@ Made with my mentor at [Bloc](http://bloc.io).
 
 Heroku app name: robcole-bloccit
 
-[Link to the hosted app](https://git.heroku.com/robcole-bloccit.git)
+[Link to the hosted app](http://robcole-bloccit.herokuapp.com/)
