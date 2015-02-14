@@ -41,6 +41,9 @@ gem 'bootstrap-sass'
 # Devise for authentication
 gem 'devise'
 
+# Figaro for handling sensitive data with environment variables
+gem 'figaro', '1.0'
+
 
 
 # Use ActiveModel has_secure_password
