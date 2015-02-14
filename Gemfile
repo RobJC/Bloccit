@@ -44,6 +44,9 @@ gem 'devise'
 # Figaro for handling sensitive data with environment variables
 gem 'figaro', '1.0'
 
+# Pundit for easy user authorization
+gem 'pundit'
+
 
 
 # Use ActiveModel has_secure_password
