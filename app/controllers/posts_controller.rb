@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+<<<<<<< HEAD
+=======
+  def index
+    @posts = policy_scope(Post)
+    authorize @posts
+  end
+>>>>>>> authorization-assignment
 
   def show
     @post = Post.find(params[:id])
