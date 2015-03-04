@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'summary/new'
+
+  get 'summary/show'
+
   devise_for :users
  
   resources :topics do
