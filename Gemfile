@@ -47,6 +47,9 @@ gem 'figaro', '1.0'
 # Pundit for easy user authorization
 gem 'pundit'
 
+# Redcarpet for rendering posts in Markdown
+gem 'redcarpet'
+
 
 
 # Use ActiveModel has_secure_password
