@@ -50,7 +50,14 @@ gem 'pundit'
 # Redcarpet for rendering posts in Markdown
 gem 'redcarpet'
 
+# Carrierwave for uploading images
+gem 'carrierwave'
 
+# MiniMagick for manipulating uploaded images
+gem 'mini_magick'
+
+# Fog to act as a cloud services library and facilitate uploading to Amazon S3 
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
