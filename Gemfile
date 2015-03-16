@@ -59,6 +59,9 @@ gem 'mini_magick'
 # Fog to act as a cloud services library and facilitate uploading to Amazon S3 
 gem 'fog'
 
+# will_paginate to present topics and posts on several pages
+gem 'will_paginate', '~> 3.0.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
