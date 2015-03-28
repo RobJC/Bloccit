@@ -1,3 +1,4 @@
+
 <div class="media">
   <div class="media-left">
     <a href="#">
@@ -19,10 +20,19 @@
       <%= @post.user.name %>
     </small>
     <p><%= @post.markdown_body %></p>
-  </div>
+
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
-    <% end %>  
+    <% end %>
+  </div>
+    <h2>Comments</h2>
+    <% @comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: {comment: comment} %>
+    <% end %>
+    
+    <h3>Add a comment:</h3>
+    <%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+    
    </div>
 </div>
