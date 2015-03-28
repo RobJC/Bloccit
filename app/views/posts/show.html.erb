@@ -31,8 +31,10 @@
       <%= render partial: 'comments/comment', locals: {comment: comment} %>
     <% end %>
     
-    <h3>Add a comment:</h3>
-    <%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+    <% if policy(@comments).create? %>
+      <h3>Add a comment:</h3>
+      <%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+    <% end %>
     
    </div>
 </div>
