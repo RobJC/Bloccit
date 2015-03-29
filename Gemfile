@@ -7,14 +7,19 @@ gem 'rails', '4.1.0'
 group :production do
    gem 'pg'
    gem 'rails_12factor'
- end
+end
  
- group :development do
+group :development do
    gem 'sqlite3'
    gem "rails-erd"
    gem 'binding_of_caller'
    gem 'better_errors'
- end
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,6 +68,8 @@ gem 'fog'
 
 # will_paginate to present topics and posts on several pages
 gem 'will_paginate', '~> 3.0.5'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
