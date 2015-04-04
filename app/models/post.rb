@@ -41,6 +41,8 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
   
+  after_create :create_vote
+  
   private
   
   def render_as_markdown(markdown)
@@ -50,6 +52,8 @@ class Post < ActiveRecord::Base
     (redcarpet.render markdown).html_safe
   end
   
-
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
   
 end
