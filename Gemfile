@@ -5,15 +5,17 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 # replaced gem 'sqlite3'
 group :production do
-   gem 'pg'
-   gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'puma'
 end
  
 group :development do
-   gem 'sqlite3'
-   gem "rails-erd"
-   gem 'binding_of_caller'
-   gem 'better_errors'
+  gem 'sqlite3'
+  gem "rails-erd"
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'thin'
 end
 
 group :development, :test do
