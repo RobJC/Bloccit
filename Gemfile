@@ -70,6 +70,9 @@ gem 'fog'
 # will_paginate to present topics and posts on several pages
 gem 'will_paginate', '~> 3.0.5'
 
+# performance monitoring
+gem 'newrelic_rpm'
+
 
 
 # Use ActiveModel has_secure_password
