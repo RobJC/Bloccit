@@ -26,10 +26,22 @@ module TestFactories
     factory :user do
       email 'test@example.com'
       password 'f4k3p455w0rd'
-
+    
       # if needed
       # is_active true
     end
+  end
+  
+  def comment_without_email(options={})
+    comment_options = {
+      user: authenticated_user,
+      post: associated_post,
+      body: 'A Comment'
+      }.merge(options)
+    comment = Comment.create(comment_options)
+    allow(comment).to receive(:send_favorite_emails)
+    comment.save!
+    comment
   end
 
 end
