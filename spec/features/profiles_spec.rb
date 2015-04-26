@@ -1,13 +1,14 @@
 require 'rails_helper'
 
+include Warden::Test::Helpers
+  Warden.test_mode!
+
 describe "Visiting Profiles" do
   
-  include TestFactories
-  
   before do 
-    @user = authenticated_user
-    @post = associated_post(user: @user, title: "Post title")
-    @comment = comment_without_email(user: @user, post: @post, body: 'A Comment')
+    @user = create(:user)
+    @post = create(:post, user: @user, title: "Post title")
+    @comment = create(:comment, user: @user, post: @post, body: 'A Comment')
   end
   
   after do    
@@ -30,12 +31,10 @@ describe "Visiting Profiles" do
   describe "sign in" do
     
     it "shows profile" do
-      @user = FactoryGirl.create(:user)
+      @user = create(:user)
       login_as(@user, :scope => :user)
-      @user.confirmed_at = Time.now
-      @user.save
-      @post = associated_post(user: @user, title: "Post title")
-      @comment = comment_without_email(user: @user, post: @post, body: 'A Comment')      
+      @post = create(:post, user: @user, title: "Post title")
+      @comment = create(:comment, user: @user, post: @post, body: 'A Comment')      
       visit user_path(@user)
       expect(current_path).to eq(user_path(@user))
       expect(page).to have_content(@user.name)
